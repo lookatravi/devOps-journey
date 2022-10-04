@@ -8,7 +8,7 @@
     7  docker-compose version
 	
 #Build image and run the app on container
-clone your nodejs app
+
 docker build -t nodejs-hello-worldapp .
 docker run -d -p 8080:8080 nodejs-hello-worldapp
 docker ps -a
