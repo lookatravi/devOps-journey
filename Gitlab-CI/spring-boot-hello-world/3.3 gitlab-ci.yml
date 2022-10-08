@@ -1,0 +1,46 @@
+stages:
+    - ssh
+    - build
+    - deploy
+    - start-server
+
+SSH To VirtualMachine:
+    stage: ssh
+    script:
+      - USR_PWD=$(echo $user_password | base64 -d)
+      - echo "User is $user_id, password is $user_password"
+      - sshpass -V
+      - cd; mkdir -p .ssh; chmod 0700 .ssh
+      - chmod 644 ~/.ssh/known_hosts
+      #Copy andpaste the private into a gitlab CI variable section. 
+      - echo "$DEPLOY_SERVER_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+      - chmod 600 ~/.ssh/id_rsa
+      - eval "$(ssh-agent -s)"
+      - ssh-add ~/.ssh/id_rsa
+      - ansible-playbook deploy-playbook.yml -i inventory.ini -variable
+    tags:
+        - ansible
+
+Build:
+    stage: build
+    script:
+        - mvn $MAVEN_CLI_OPTS deploy
+    artifacts:
+     paths:
+        - target/test-SNAPSHOT.jar 
+    tags:
+        - ansible
+
+Deploy to VM: 
+    stage: deploy
+    script:
+      - ansible-playbook deploy-playbook.yml -i inventory.ini -v 
+    tags:
+        - ansible 
+
+Start The App:
+      stage: start-server
+      script:
+        - "nohup java -jar ~/test-SNAPSHOT.jar > console.out 2>&1 &"
+
+
