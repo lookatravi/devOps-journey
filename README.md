@@ -2,7 +2,7 @@
 My learning of DevOps journey
 
 ### Purpose:
-By following this repository you can able to setup a DevOps CI/CD Pipeline using
+DevOps CI/CD Pipeline using
 - git
 - Jenkins
 - Maven
@@ -14,9 +14,9 @@ By following this repository you can able to setup a DevOps CI/CD Pipeline using
 
 - git status
 - git add .
-git commit -m "Commit message"
-git push
-git clone --single-branch --branch <branch-name> <remote-repo-url>
+- git commit -m "Commit message"
+- git push
+- git clone --single-branch --branch <branch-name> <remote-repo-url>
 
 
 
