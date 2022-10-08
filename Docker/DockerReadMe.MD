@@ -1,3 +1,9 @@
+#Create an ec2 instance on AWS
+	1. Create an ec2 instance
+	2. Access the instance via private key
+	   chmod 400 docker-host.pem
+	   ssh -i "docker-host.pem" ec2-user@test.amazonaws.com
+
 #How to install docker on AWS linux VM
     1  sudo yum install python3-pip
     2  sudo pip3 install docker-compose # with root access
