@@ -1,7 +1,7 @@
-# devOps-journey
+**devOps-journey**
 My learning of DevOps journey
 
-# Useful git commands
+**Useful git commands**
 
 -- git status
 -- git add .
