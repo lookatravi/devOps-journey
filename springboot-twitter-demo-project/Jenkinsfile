@@ -1,5 +1,5 @@
-def imageName = 'stalinrtp.jfrog.io/valaxy-docker/valaxy-rtp'
-def registry  = 'https://stalinrtp.jfrog.io'
+def imageName = 'ravidevops1507.jfrog.io/ravidevops-docker/ravidevops-rtp'
+def registry  = 'https://ravidevops1507.jfrog.io'
 def version   = '1.0.2'
 def app
 pipeline {
@@ -28,3 +28,4 @@ pipeline {
                        
     }
  }
+
