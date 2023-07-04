@@ -1,5 +1,5 @@
-# valaxy-terraform-aws
-1. Go Inside the valaxy-infra directory
+# ravidevops-terraform-aws
+1. Go Inside the ravidevops-infra directory
 2. Execute "terraform init"
 3. Execute terraform plan
 4. Execute terraform apply
