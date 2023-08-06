@@ -1,6 +1,3 @@
-# Simple DevOps Project
-My learning of DevOps journey
-
 ### Purpose:
 DevOps CI/CD Pipeline using
 - git
@@ -17,6 +14,3 @@ DevOps CI/CD Pipeline using
 - git commit -m "Commit message"
 - git push
 - git clone --single-branch --branch <branch-name> <remote-repo-url>
-
-
-
