@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-pod
+spec:
+  containers:
+    - name: configmap-container
+      image: httpd
+      envFrom:
+        # Load the Complete ConfigMap
+        - configMapRef:
+            name: test-configmap
